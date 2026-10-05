@@ -138,7 +138,11 @@ export OLLAMA_API_KEY=your_key_here
 
 When `OLLAMA_API_KEY` is set, Vigil automatically uses Ollama's cloud API instead of the local instance. Same models, no local Ollama installation required.
 
-To use a different model, change `OLLAMA_MODEL` in `vigil/summarizer.py`.
+To use a different model (default: `llama3.2`), set `VIGIL_OLLAMA_MODEL`:
+
+```bash
+export VIGIL_OLLAMA_MODEL=qwen2.5:3b
+```
 
 ### Setting API keys
 
@@ -147,13 +151,20 @@ Create `~/.vigil/.env` and add your keys there — Vigil loads it automatically 
 ```bash
 OLLAMA_API_KEY=your_key_here
 ANTHROPIC_API_KEY=your_key_here
+VIGIL_OLLAMA_MODEL=llama3.2
 ```
 
 You only need the keys for the services you want to use.
 
 ### Anthropic API (fallback)
 
-Set `ANTHROPIC_API_KEY` in your environment. Vigil uses `claude-haiku-4-5` which costs a fraction of a cent per summary call.
+Install vigil with the Anthropic extra, then set `ANTHROPIC_API_KEY`:
+
+```bash
+pipx install 'vigil-tracker[anthropic]'   # or: pip install 'vigil-tracker[anthropic]'
+```
+
+Vigil uses `claude-haiku-4-5`, which costs a fraction of a cent per summary call.
 
 If neither is available, Vigil still works — it just shows the raw pane output without the summary line.
 

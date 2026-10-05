@@ -8,7 +8,7 @@ _TTL = 20  # seconds between refreshes per agent
 
 OLLAMA_LOCAL_URL = "http://localhost:11434/api/chat"
 OLLAMA_CLOUD_URL = "https://api.ollama.com/api/chat"
-OLLAMA_MODEL     = "llama3.2"  # change to any model you have pulled
+OLLAMA_MODEL     = os.environ.get("VIGIL_OLLAMA_MODEL", "llama3.2")
 
 _PROMPT = (
     "Last lines of a terminal process:\n\n"

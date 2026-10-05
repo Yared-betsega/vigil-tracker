@@ -20,9 +20,11 @@ dependencies = [
     "click>=8.0",
     "rich>=13.0",
     "psutil>=5.9",
-    "anthropic>=1.0",
     "python-dotenv>=1.0",
 ]
+
+[project.optional-dependencies]
+anthropic = ["anthropic>=1.0"]
 
 [project.scripts]
 vigil = "vigil.cli:cli"
