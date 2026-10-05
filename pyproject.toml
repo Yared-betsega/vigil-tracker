@@ -29,3 +29,8 @@ vigil = "vigil.cli:cli"
 
 [tool.setuptools.packages.find]
 include = ["vigil*"]
+
+[project.urls]
+Homepage = "https://github.com/Yared-betsega/vigil-tracker"
+Repository = "https://github.com/Yared-betsega/vigil-tracker"
+Issues = "https://github.com/Yared-betsega/vigil-tracker/issues"

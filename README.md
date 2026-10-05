@@ -21,7 +21,7 @@ This installs the `vigil` command.
 For development:
 
 ```bash
-git clone <repo-url> && cd vigil
+git clone https://github.com/Yared-betsega/vigil-tracker.git && cd vigil-tracker
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e .
