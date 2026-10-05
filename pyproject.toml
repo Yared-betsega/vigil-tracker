@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vigil-tracker"
+version = "0.1.0"
+description = "A minimal CLI tool for observing agents and workflows running in your tmux panes."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Yared Tsegaye Gizaw", email = "yaredtsegaye120@gmail.com" }]
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Environment :: Console",
+    "Operating System :: POSIX",
+]
+dependencies = [
+    "click>=8.0",
+    "rich>=13.0",
+    "psutil>=5.9",
+    "anthropic>=1.0",
+    "python-dotenv>=1.0",
+]
+
+[project.scripts]
+vigil = "vigil.cli:cli"
+
+[tool.setuptools.packages.find]
+include = ["vigil*"]
